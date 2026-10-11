@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
+
 @import "tailwindcss";
 
 @theme{
@@ -5,4 +7,5 @@
 --color-Green-700: hsl(176, 72%, 28%);
 --color-Black: hsl(0, 0%, 0%);
 --color-Gray-500: hsl(0, 0%, 48%);
+--font-Commissioner: "Commissioner", sans-serif;
 }
