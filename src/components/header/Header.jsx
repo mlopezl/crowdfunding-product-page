@@ -10,7 +10,7 @@ import CloseIcon from './CloseIcon';
 function Header(){
     const [isMenuOpened, setIsMenuOpened] =  useState(false);
     return(
-        <header className='relative w-full flex flex-col items-center'>
+        <header className='w-full h-65 flex flex-col items-center z-1'>
             <MobileBackground/>
             <DesktopBackground/>
             <div className='w-full max-w-5xl p-5 absolute z-1 flex justify-between items-center sm:p-7 md:p-8'>

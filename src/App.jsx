@@ -1,5 +1,6 @@
 import './index.css'
 import Header from './components/header/Header'
+import MainContainer from './components/Main/MainContainer'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
     <div className='font-Commissioner'>
       <Header/>
+      <MainContainer/>
     </div>
     </>
   )
