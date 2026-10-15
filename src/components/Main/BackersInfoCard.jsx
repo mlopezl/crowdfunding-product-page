@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
-
 function BackersInfoCard({ amount }) {
   const value = Number(amount);
   const safeAmount = Number.isFinite(value) ? Math.max(0, value) : 0;
   const percentage = Math.min(100, (safeAmount / 100000) * 100);
 
   return (
-    <article className="relative bg-white rounded-sm w-70 h-80 p-8 m-auto mb-100 shadow flex flex-col justify-center gap-4">
+    <article className="relative bg-white rounded-sm w-70 h-80 p-8 m-auto shadow flex flex-col justify-center gap-4">
       <div className="flex flex-col gap-2">
         <p className="text-center text-2xl font-bold">
           ${safeAmount.toLocaleString()}
