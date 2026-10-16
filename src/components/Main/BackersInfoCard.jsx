@@ -4,8 +4,8 @@ function BackersInfoCard({ amount }) {
   const percentage = Math.min(100, (safeAmount / 100000) * 100);
 
   return (
-    <article className="relative bg-white rounded-sm w-70 h-80 p-8 m-auto shadow flex flex-col justify-center gap-4">
-      <div className="flex flex-col gap-2">
+    <article className="relative bg-white rounded-sm w-70 h-80 p-8 m-auto shadow flex flex-col justify-center gap-2 sm:w-150 sm:flex-row sm:flex-wrap ">
+      <div className="w-30 m-auto flex flex-col p-2 gap-2 border-b-1 border-gray-200 sm:w-42 sm:border-b-0 sm:border-r-1">
         <p className="text-center text-2xl font-bold">
           ${safeAmount.toLocaleString()}
         </p>
@@ -14,12 +14,12 @@ function BackersInfoCard({ amount }) {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="w-30 m-auto flex flex-col p-2 gap-2 border-b border-b-1 border-gray-200 sm:w-42 sm:border-b-0 sm:border-r-1">
         <p className="text-center text-2xl font-bold">5007</p>
         <p className="text-[11px] text-gray-500 text-center">total backers</p>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="w-30 m-auto flex flex-col p-2 gap-2 sm:w-42">
         <p className="text-center text-2xl font-bold">56</p>
         <p className="text-[11px] text-gray-500 text-center">days left</p>
       </div>
