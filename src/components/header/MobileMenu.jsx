@@ -1,7 +1,7 @@
 function MobileMenu({ isMenuOpened }) {
   return (
     <nav
-      className={`${isMenuOpened ? "block" : "hidden"} w-18/20 h-44 rounded-xl bg-white absolute top-20 sm:w-37/40 md:hidden`}
+      className={`${isMenuOpened ? "block" : "hidden"} w-18/20 h-44 rounded-xl shadow bg-white absolute top-20 sm:w-37/40 md:hidden`}
     >
       <ul className="w-full h-full flex flex-col justify-between text-md font-semibold">
         <li className="border-b-1 border-gray-200 p-4 h-full flex items-center">

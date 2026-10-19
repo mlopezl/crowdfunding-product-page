@@ -3,7 +3,7 @@ import BackProductCard from './BackProductCard';
 
 function BackProjectModal({isHidden, setIsHidden}){
     return(
-        <section className={`absolute w-70 shadow bg-white top-30 left-5 p-6 flex flex-col gap-8 rounded-xl z-5
+        <section className={`absolute w-[90%] max-w-150 shadow bg-white top-30 left-1/2 -translate-x-1/2 p-6 flex flex-col gap-8 rounded-xl z-5
         ${isHidden ? "hidden" : "block"}`}>
             <header className='flex flex-col gap-4'>
                 <div className='w-full h-10 flex justify-between items-center'>
