@@ -1,17 +1,17 @@
 function ProductCard({ product, pledge, description, amountLeft, backed }) {
   return (
     <article
-      className={`bg-white border-1 border-gray-200 rounded-sm w-55 p-4 m-auto flex flex-col gap-2 sm:w-135 sm:gap-4
+      className={`bg-white border-1 border-gray-200 rounded-lg w-55 p-6 m-auto flex flex-col gap-2 sm:w-135 sm:gap-6
         ${amountLeft > 0 ? "opacity-100" : "opacity-50"}`}
     >
         <header className="flex flex-col gap-2 sm:flex-row sm:justify-between">
-          <h3 className="text-[11px] font-bold sm:text-[13px]">{product}</h3>
-          <p className="text-[11px] text-Green-400 font-bold sm:text-[13px]">
+          <h3 className="text-[11px] font-bold sm:text-sm">{product}</h3>
+          <p className="text-[11px] text-Green-400 font-bold sm:text-sm">
             Pledge {pledge} or more
           </p>
         </header>
 
-      <p className="text-[11px]/5 text-Gray-500 sm:text-[13px]">
+      <p className="text-[11px]/5 text-Gray-500 sm:text-sm">
         {description}
       </p>
       <footer className="flex flex-col gap-2 sm:flex-row sm:justify-between">
