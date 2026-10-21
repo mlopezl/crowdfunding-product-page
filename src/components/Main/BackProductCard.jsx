@@ -28,7 +28,7 @@ function BackProductCard({
           />
         </label>
         <header className="flex flex-col gap-1 sm:flex-row sm:justify-between md:gap-4">
-          <h3 className="text-[11px] font-bold sm:text-[13px]">{product}</h3>
+          <h3 className="text-[11px] font-bold sm:text-[13px] transition duration-300 hover:text-Green-700 cursor-pointer">{product}</h3>
           {noReward ? null : (
             <p className="text-[11px] text-Green-400 font-bold sm:text-[13px]">
               Pledge {pledge} or more

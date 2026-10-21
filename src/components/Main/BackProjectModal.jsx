@@ -10,7 +10,7 @@ function BackProjectModal({isHidden, setIsHidden}){
                     <h2 className="text-center font-bold sm:text-xl">Back this project</h2>
                     <img
                     onClick={() => setIsHidden(true)}
-                    className='w-4 h-4' src={closeIcon} alt="close icon" />
+                    className='w-4 h-4 cursor-pointer' src={closeIcon} alt="close icon" />
                 </div>
                 <p className="text-[12px] text-Gray-500 text-center sm:text-[14px]">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
             </header>

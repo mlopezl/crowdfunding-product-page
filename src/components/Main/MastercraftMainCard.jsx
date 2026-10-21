@@ -10,11 +10,11 @@ function MastercraftMainCard({setIsHidden}){
             <div className="flex justify-between gap-2">
                 <button
                 onClick={() => setIsHidden(false)}
-                className="w-40 rounded-3xl bg-Green-400 text-white text-xs font-semibold tracking-wider p-2 sm:text-sm">Back this project</button>
+                className="w-40 rounded-3xl bg-Green-400 text-white text-xs font-semibold tracking-wider p-2 sm:text-sm transition duration-300 hover:bg-Green-700 cursor-pointer">Back this project</button>
                 <div className="flex items-center relative">
                     <img className="w-12 z-2" src={iconBookmark} alt="Icon bookmark" />
                     <button
-                    className="hidden rounded-2xl w-30 h-10 bg-gray-200 text-sm text-Gray-500 font-bold -ml-5 sm:block">Bookmark</button>
+                    className="hidden rounded-2xl w-30 h-10 bg-gray-200 text-sm text-Gray-500 font-bold -ml-5 sm:block  hover:brightness-105 cursor-pointer">Bookmark</button>
                 </div>
             </div>
         </article>

@@ -20,7 +20,8 @@ function ProductCard({ product, pledge, description, amountLeft, backed }) {
           left
         </p>
         <button
-          className={`w-30 text-[11px] p-2 text-white rounded-2xl sm:text-[13px]
+          disabled={Number(amountLeft) === 0}
+          className={`w-30 text-[11px] p-2 text-white rounded-2xl sm:text-[13px] transition duration-300 hover:bg-Green-700
                 ${amountLeft > 0 ? "bg-Green-400" : "bg-Gray-500"}`}
         >
           {amountLeft > 0 ? "Select Reward" : "Out of Stock"}
