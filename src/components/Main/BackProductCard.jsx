@@ -1,29 +1,30 @@
 import SelectedCardForm from "./SelectedCardForm";
-import { useState } from "react";
 
 function BackProductCard({
+  productId,
   product,
   pledge,
   description,
   amountLeft,
   noReward,
   onContinue,
+  isSelected,
+  onSelect,
+  minPledge
 }) {
-  const [isChecked, setIsChecked] = useState(false);
-  const handleChecked = (e) => {
-    setIsChecked(e.target.checked);
-  };
   return (
     <article
+    data-product-id={productId}
       className={`bg-white border-1 border-gray-200 rounded-sm max-w-[100%] p-6 flex flex-col gap-10 sm:w-135 sm:gap-4 has-[:checked]:border-Green-400
         ${amountLeft > 0 ? "opacity-100" : "opacity-50"}`}
     >
       <div className="flex relative  gap-6 items-center sm:gap-4">
         <label className="cursor-pointer w-6 h-6 rounded-full border-1 border-gray-400 flex justify-center items-center has-[:checked]:border-Green-400">
           <input
-            onChange={handleChecked}
             type="radio"
             name="custom-radio"
+            checked={isSelected}
+            onChange={onSelect}
             disabled={Number(amountLeft) === 0}
             className="appearance-none w-3 h-3 rounded-full checked:border-none checked:bg-Green-400"
           />
@@ -59,7 +60,12 @@ function BackProductCard({
           </p>
         )}
       </footer>
-      {isChecked ? <SelectedCardForm onContinue={onContinue} /> : null}
+      {isSelected ? (
+  <SelectedCardForm
+    minPledge={minPledge}
+    onContinue={onContinue}
+  />
+) : null}
     </article>
   );
 }

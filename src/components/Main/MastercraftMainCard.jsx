@@ -3,7 +3,7 @@ import iconBookmark from "../../../public/images/icon-bookmark.svg";
 import iconBookmarkGreen from "../../../public/images/icon-bookmark-green.svg";
 import { useState } from "react";
 
-function MastercraftMainCard({setIsHidden}){
+function MastercraftMainCard({onOpenProject}){
     const [isBookmarked, setIsBookmaked] = useState(false);
     return(
         <article className="relative bg-white rounded-sm w-70 h-60 p-8 m-auto -mt-10 shadow flex flex-col justify-center gap-4 sm:w-150 sm:-mt-30 md:-mt-20 lg:-mt-10">
@@ -12,7 +12,7 @@ function MastercraftMainCard({setIsHidden}){
             <p className="text-[11px] text-Gray-500 text-center sm:text-sm">A beautifully handcrafted monitor stand to reduce neck and eye strain.</p>
             <div className="flex justify-between gap-2">
                 <button
-                onClick={() => setIsHidden(false)}
+                onClick={() => onOpenProject()}
                 className="w-40 rounded-3xl bg-Green-400 text-white text-xs font-semibold tracking-wider p-2 sm:text-sm transition duration-300 hover:bg-Green-700 cursor-pointer">Back this project</button>
                 <div className="flex items-center relative">
                     <img className="w-12 z-2 cursor-pointer" src={!isBookmarked ? iconBookmark : iconBookmarkGreen} alt="Icon bookmark" />

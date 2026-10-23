@@ -1,4 +1,5 @@
-function ProductCard({ product, pledge, description, amountLeft, backed }) {
+function ProductCard({productId,
+  onSelectReward, product, pledge, description, amountLeft}) {
   return (
     <article
       className={`bg-white border-1 border-gray-200 rounded-lg w-55 p-6 m-auto flex flex-col gap-2 sm:w-135 sm:gap-6
@@ -20,6 +21,7 @@ function ProductCard({ product, pledge, description, amountLeft, backed }) {
           left
         </p>
         <button
+        onClick={() => onSelectReward(productId)}
           disabled={Number(amountLeft) === 0}
           className={`w-30 text-[11px] p-2 text-white rounded-2xl sm:text-[13px] transition duration-300 hover:bg-Green-700
                 ${amountLeft > 0 ? "bg-Green-400" : "bg-Gray-500"}`}

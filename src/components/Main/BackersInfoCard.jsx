@@ -1,4 +1,4 @@
-function BackersInfoCard({ amount }) {
+function BackersInfoCard({ amount, backers }) {
   const value = Number(amount);
   const safeAmount = Number.isFinite(value) ? Math.max(0, value) : 0;
   const percentage = Math.min(100, (safeAmount / 100000) * 100);
@@ -15,7 +15,7 @@ function BackersInfoCard({ amount }) {
       </div>
 
       <div className="w-30 m-auto flex flex-col p-2 gap-2 border-b border-b-1 border-gray-200 sm:w-42 sm:border-b-0 sm:border-r-1">
-        <p className="text-center text-2xl font-bold sm:text-[25px]">5007</p>
+        <p className="text-center text-2xl font-bold sm:text-[25px]">{backers.toLocaleString()}</p>
         <p className="text-[11px] text-gray-500 text-center sm:text-sm">total backers</p>
       </div>
 
