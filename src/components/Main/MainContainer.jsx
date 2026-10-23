@@ -1,7 +1,6 @@
 import MastercraftMainCard from "./MastercraftMainCard";
 import BackersInfoCard from "./BackersInfoCard";
 import AboutSection from "./AboutSection";
-import CompletedModal from "./CompletedModal";
 
 function MainContainer({setIsHidden}){
     return(
@@ -9,7 +8,6 @@ function MainContainer({setIsHidden}){
             <MastercraftMainCard setIsHidden={setIsHidden}/>
             <BackersInfoCard amount={"89914"}/>
             <AboutSection/>
-            <CompletedModal/>
         </main>
     )
 }

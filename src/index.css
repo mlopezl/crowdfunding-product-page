@@ -9,3 +9,11 @@
 --color-Gray-500: hsl(0, 0%, 48%);
 --font-Commissioner: "Commissioner", sans-serif;
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

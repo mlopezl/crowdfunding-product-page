@@ -7,6 +7,7 @@ function BackProductCard({
   description,
   amountLeft,
   noReward,
+  onContinue,
 }) {
   const [isChecked, setIsChecked] = useState(false);
   const handleChecked = (e) => {
@@ -58,7 +59,7 @@ function BackProductCard({
           </p>
         )}
       </footer>
-      {isChecked ? <SelectedCardForm/> : null}
+      {isChecked ? <SelectedCardForm onContinue={onContinue} /> : null}
     </article>
   );
 }
