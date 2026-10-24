@@ -6,14 +6,21 @@ function BackProjectModal({isHidden, setIsHidden, onContinue, selectedProduct, s
     const modalRef = useRef(null)
 
 useEffect(() => {
-  if (isHidden || !selectedProduct) return
+  if (isHidden) return
 
   const modal = modalRef.current
-  const card = modal?.querySelector(
+  if (!modal) return
+
+  if (!selectedProduct) {
+    modal.scrollTop = 0
+    return
+  }
+
+  const card = modal.querySelector(
     `[data-product-id="${selectedProduct}"]`
   )
 
-  if (!modal || !card) return
+  if (!card) return
 
   const modalRect = modal.getBoundingClientRect()
   const cardRect = card.getBoundingClientRect()
@@ -30,7 +37,7 @@ useEffect(() => {
   })
 }, [isHidden, selectedProduct])
     return(
-        <form ref={modalRef} className={`fixed w-[90%] max-w-150 shadow bg-white top-6 left-1/2
+        <div ref={modalRef} className={`fixed w-[90%] max-w-150 shadow bg-white top-6 left-1/2
         -translate-x-1/2 p-6 flex flex-col gap-8 rounded-xl z-[50]
         max-h-[calc(100vh-3rem)] overflow-y-auto hide-scrollbar
         ${isHidden ? "hidden" : "block"}`}>
@@ -50,7 +57,7 @@ useEffect(() => {
             isSelected={selectedProduct === 'black'} onSelect={() => setSelectedProduct('black')}/>
             <BackProductCard minPledge={minimumPledges.mahogany} productId="mahogany" product={"Mahogany Special Edition"} pledge={"$200"} description={"You get two Special Edition Mahogamy stands, a Backer T-Shirt, and a personal thank you. You'll be added to our Backer member list. Shipping is included."} amountLeft={inventory.mahogany} onContinue={onContinue}
             isSelected={selectedProduct === 'mahogany'} onSelect={() => setSelectedProduct('mahogany')}/>
-        </form>
+        </div>
     )
 }
 

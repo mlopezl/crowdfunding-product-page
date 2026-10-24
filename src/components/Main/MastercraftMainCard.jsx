@@ -14,13 +14,28 @@ function MastercraftMainCard({onOpenProject}){
                 <button
                 onClick={() => onOpenProject()}
                 className="w-40 rounded-3xl bg-Green-400 text-white text-xs font-semibold tracking-wider p-2 sm:text-sm transition duration-300 hover:bg-Green-700 cursor-pointer">Back this project</button>
-                <div className="flex items-center relative">
-                    <img className="w-12 z-2 cursor-pointer" src={!isBookmarked ? iconBookmark : iconBookmarkGreen} alt="Icon bookmark" />
-                    <button
-                    onClick={() => setIsBookmaked(prev => !prev)}
-                    className={`hidden rounded-2xl w-30 h-10 bg-gray-200 text-sm text-Gray-500 font-bold -ml-5 sm:block  hover:brightness-105 cursor-pointer
-                    ${isBookmarked ? "text-Green-700" : "bg-Gray-500"}`}>Bookmark</button>
-                </div>
+               <button
+  type="button"
+  onClick={() => setIsBookmaked(prev => !prev)}
+  aria-pressed={isBookmarked}
+  aria-label={
+    isBookmarked ? "Quitar de favoritos" : "Guardar en favoritos"
+  }
+  className={`flex items-center rounded-3xl cursor-pointer transition duration-300 sm:pr-4 sm:hover:brightness-105
+    ${isBookmarked
+      ? "text-Green-700 sm:bg-green-100"
+      : "text-Gray-500 sm:bg-gray-200"
+    }`}
+>
+  <img
+    className="w-12 h-12 shrink-0"
+    src={isBookmarked ? iconBookmarkGreen : iconBookmark}
+    alt=""
+  />
+  <span className="hidden sm:block pl-2 text-sm font-bold">
+    {isBookmarked ? "Bookmarked" : "Bookmark"}
+  </span>
+</button>
             </div>
         </article>
     )

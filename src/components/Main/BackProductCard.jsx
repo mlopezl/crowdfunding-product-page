@@ -21,6 +21,7 @@ function BackProductCard({
       <div className="flex relative  gap-6 items-center sm:gap-4">
         <label className="cursor-pointer w-6 h-6 rounded-full border-1 border-gray-400 flex justify-center items-center has-[:checked]:border-Green-400">
           <input
+            id={`pledge-${productId}`}
             type="radio"
             name="custom-radio"
             checked={isSelected}
@@ -30,7 +31,17 @@ function BackProductCard({
           />
         </label>
         <header className="flex flex-col gap-1 sm:flex-row sm:justify-between md:gap-4">
-          <h3 className="text-[11px] font-bold sm:text-[13px] transition duration-300 hover:text-Green-700 cursor-pointer">{product}</h3>
+          <h3
+  className={`text-[11px] font-bold sm:text-[13px] transition duration-300
+    ${Number(amountLeft) > 0
+      ? "hover:text-Green-700 cursor-pointer"
+      : "cursor-not-allowed"
+    }`}
+>
+  <label htmlFor={`pledge-${productId}`}>
+    {product}
+  </label>
+</h3>
           {noReward ? null : (
             <p className="text-[11px] text-Green-400 font-bold sm:text-[13px]">
               Pledge {pledge} or more
