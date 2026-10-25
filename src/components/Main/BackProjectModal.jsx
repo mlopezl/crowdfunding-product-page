@@ -1,6 +1,7 @@
 import closeIcon from '../../../public/images/icon-close-menu-dark.svg'
 import BackProductCard from './BackProductCard';
 import { useEffect, useRef } from 'react'
+import { motion } from 'motion/react'
 
 function BackProjectModal({isHidden, setIsHidden, onContinue, selectedProduct, setSelectedProduct,  minimumPledges, inventory}){
     const modalRef = useRef(null)
@@ -37,10 +38,14 @@ useEffect(() => {
   })
 }, [isHidden, selectedProduct])
     return(
-        <div ref={modalRef} className={`fixed w-[90%] max-w-150 shadow bg-white top-6 left-1/2
+        <motion.div
+          ref={modalRef}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.22, ease: 'easeOut' }}
+          className={`fixed w-[90%] max-w-150 shadow bg-white top-6 left-1/2
         -translate-x-1/2 p-6 flex flex-col gap-8 rounded-xl z-[50]
-        max-h-[calc(100vh-3rem)] overflow-y-auto hide-scrollbar
-        ${isHidden ? "hidden" : "block"}`}>
+        max-h-[calc(100vh-3rem)] overflow-y-auto hide-scrollbar`}>
             <header className='flex flex-col gap-4'>
                 <div className='w-full h-10 flex justify-between items-center'>
                     <h2 className="text-center font-bold sm:text-xl">Back this project</h2>
@@ -57,7 +62,7 @@ useEffect(() => {
             isSelected={selectedProduct === 'black'} onSelect={() => setSelectedProduct('black')}/>
             <BackProductCard minPledge={minimumPledges.mahogany} productId="mahogany" product={"Mahogany Special Edition"} pledge={"$200"} description={"You get two Special Edition Mahogamy stands, a Backer T-Shirt, and a personal thank you. You'll be added to our Backer member list. Shipping is included."} amountLeft={inventory.mahogany} onContinue={onContinue}
             isSelected={selectedProduct === 'mahogany'} onSelect={() => setSelectedProduct('mahogany')}/>
-        </div>
+        </motion.div>
     )
 }
 

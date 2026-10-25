@@ -78,15 +78,17 @@ function App() {
         />
       )}
 
-      <BackProjectModal
-        isHidden={isHidden}
-        setIsHidden={setIsHidden}
-        onContinue={handleContinue}
-        selectedProduct={selectedProduct}
-        setSelectedProduct={setSelectedProduct}
-        minimumPledges={MINIMUM_PLEDGES}
-        inventory={inventory}
-      />
+      {!isHidden && (
+        <BackProjectModal
+          isHidden={isHidden}
+          setIsHidden={setIsHidden}
+          onContinue={handleContinue}
+          selectedProduct={selectedProduct}
+          setSelectedProduct={setSelectedProduct}
+          minimumPledges={MINIMUM_PLEDGES}
+          inventory={inventory}
+        />
+      )}
 
       {isCompletedOpen && (
         <CompletedModal onClose={() => setIsCompletedOpen(false)} />
